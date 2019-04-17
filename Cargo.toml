@@ -1,0 +1,11 @@
+[package]
+name = "volva"
+version = "0.1.0"
+description = "A crate to provide a unified oracle for obtaining function, symbol, branching, etc. for a given program binary."
+authors = ["Sam L. Thomas <st@xv.ax>"]
+repository = "https://github.com/xorpse/volva.git"
+license = "MIT"
+license-file = "LICENSE"
+edition = "2018"
+
+[dependencies]
