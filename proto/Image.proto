@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package volva.proto;
+
+import "AuxiliaryData.proto";
+import "ICFG.proto";
+
+message Image {
+  bytes id                   = 1; // uuid
+  repeated Module modules    = 2;
+  ICFG icfg                  = 3;
+  repeated AuxiliaryData     = 4;
+}

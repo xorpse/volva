@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package volva.proto;
+
+/*
+  entrypoint can be represented as, e.g.,:
+    AuxiliaryData {
+      id       = ...;
+      kind     = "entrypoint";
+      referent = <entry-block>;
+      value    = ...;
+    }
+ */
+
+message AuxiliaryData {
+  bytes id             = 1; // uuid
+  string kind          = 2;
+  bytes referent       = 3; // uuid
+  optional bytes value = 4;
+}

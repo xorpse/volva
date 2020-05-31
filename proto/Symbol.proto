@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package volva.proto;
+
+message Symbol {
+  enum Kind {
+    Function   = 0;
+    Variable   = 1;
+    Annotation = 2;
+    Label      = 3;
+    Other      = 4;
+  }
+
+  bytes id         = 1; // uuid
+  string name      = 2;
+  oneof referent {
+    bytes id       = 3; // uuid
+    uint64 address = 4; // e.g., for symbols outisde of current program
+  }
+  Kind kind        = 5;
+}

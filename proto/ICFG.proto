@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package volva.proto;
+
+message ICFG {
+  message Edge {
+    enum Kind {
+      Branch      = 0;
+      Call        = 1;
+      Fallthrough = 2;
+      Return      = 3;
+    }
+
+    bytes source      = 1; // uuid
+    bytes destination = 2; // uuid
+
+    Kind kind         = 3;
+    bool conditional  = 4;
+    bool indirect     = 5;
+  }
+
+  repeated Edge  edges = 1;
+  repeated bytes nodes = 2; // uuid
+}

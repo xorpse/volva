@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package volva.proto;
+
+message Block {
+  enum Kind {
+    Code  = 0;
+    Data  = 1;
+  }
+
+  bytes id      = 1;
+  uint64 offset = 2; // base_address + offset => address
+  Kind kind     = 3;
+}
+
+
+message BlockGroup {
+  bytes id                     = 1; // uuid
+  repeated Block blocks        = 2;
+  optional uint64 base_address = 3;
+  uint64 size                  = 4;
+  bytes backing                = 5;
+}
+

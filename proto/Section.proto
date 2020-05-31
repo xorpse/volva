@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package volva.proto;
+
+import "Block.proto";
+
+message Section {
+  enum Kind {
+    Readable    = 0;
+    Writable    = 1;
+    Executable  = 2;
+    Loadable    = 3;
+    Initialised = 4;
+  }
+
+  bytes id                   = 1; // uuid
+  optional string name       = 2; // e.g., .text, .bss
+  repeated BlockGroup blocks = 3;
+  repeated Kind kind         = 4;
+}

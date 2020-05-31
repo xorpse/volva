@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package volva.proto;
+
+enum Architecture {
+  ARM     = 0;
+  ARM_64  = 1;
+  MIPS    = 2;
+  MIPS_64 = 3;
+  PPC     = 4;
+  PPC_64  = 5;
+  X86     = 6;
+  X86_64  = 7;
+}
+
+enum Endian {
+  Big    = 0;
+  Little = 1;
+}
