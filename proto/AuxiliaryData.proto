@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
@@ -13,8 +13,8 @@ package volva.proto;
  */
 
 message AuxiliaryData {
-  bytes id             = 1; // uuid
-  string kind          = 2;
-  bytes referent       = 3; // uuid
-  optional bytes value = 4;
+  required bytes id             = 1; // uuid
+  required string kind          = 2;
+  required bytes referent       = 3; // uuid
+  optional bytes value          = 4;
 }

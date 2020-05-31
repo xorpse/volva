@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
@@ -11,12 +11,12 @@ message ICFG {
       Return      = 3;
     }
 
-    bytes source      = 1; // uuid
-    bytes destination = 2; // uuid
+    required bytes source      = 1; // uuid
+    required bytes destination = 2; // uuid
 
-    Kind kind         = 3;
-    bool conditional  = 4;
-    bool indirect     = 5;
+    required Kind kind         = 3;
+    required bool conditional  = 4;
+    required bool indirect     = 5;
   }
 
   repeated Edge  edges = 1;

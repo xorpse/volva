@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
@@ -7,10 +7,10 @@ import "Section.proto";
 import "Symbol.proto";
 
 message Module {
-  bytes id                  = 1;
-  optional string name      = 2; // e.g., path, etc.
-  Architecture arch         = 3;
-  Endian endian             = 4;
-  repeated Symbol symbols   = 5;
-  repeated Section sections = 6;
+  required bytes id          = 1;
+  optional string name       = 2; // e.g., path, etc.
+  required Architecture arch = 3;
+  required Endian endian     = 4;
+  repeated Symbol symbols    = 5;
+  repeated Section sections  = 6;
 }

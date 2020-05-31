@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
@@ -13,7 +13,7 @@ message Section {
     Initialised = 4;
   }
 
-  bytes id                   = 1; // uuid
+  required bytes id          = 1; // uuid
   optional string name       = 2; // e.g., .text, .bss
   repeated BlockGroup blocks = 3;
   repeated Kind kind         = 4;

@@ -1,13 +1,14 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
 import "AuxiliaryData.proto";
 import "ICFG.proto";
+import "Module.proto";
 
 message Image {
-  bytes id                   = 1; // uuid
-  repeated Module modules    = 2;
-  ICFG icfg                  = 3;
-  repeated AuxiliaryData     = 4;
+  required bytes id                     = 1; // uuid
+  repeated Module modules               = 2;
+  required ICFG inter_cfg               = 3;
+  repeated AuxiliaryData auxiliary_data = 4;
 }

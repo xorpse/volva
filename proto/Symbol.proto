@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package volva.proto;
 
@@ -11,11 +11,11 @@ message Symbol {
     Other      = 4;
   }
 
-  bytes id         = 1; // uuid
-  string name      = 2;
+  required bytes id         = 1; // uuid
+  required string name      = 2;
   oneof referent {
-    bytes id       = 3; // uuid
-    uint64 address = 4; // e.g., for symbols outisde of current program
+    bytes referent_id       = 3;
+    uint64 referent_address = 4; // e.g., for symbols outisde of current program
   }
-  Kind kind        = 5;
+  required Kind kind        = 5;
 }
